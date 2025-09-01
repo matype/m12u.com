@@ -6,8 +6,20 @@ export const siteConfig = {
 }
 
 export default {
-  // Config options...
-  // Server-side render by default, to enable SPA mode set this to `false`
-  ssr: true,
-  prerender: true,
+  ssr: false,
+  async prerender() {
+    const { readdir } = await import("node:fs/promises")
+    const path = await import("node:path")
+
+    const dir = path.join(process.cwd(), "app", "content")
+    const files = await readdir(dir)
+
+    const slugs = files
+      .filter((f) => /\.md?$/i.test(f))
+      .map((f) => f.replace(/\.(md)$/, ""))
+
+    console.log("[prerender] slugs:", slugs)
+
+    return ["/", "/blog", ...slugs.map((s) => `/blog/${s}`)]
+  },
 } satisfies Config
