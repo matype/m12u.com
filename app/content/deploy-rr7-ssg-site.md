@@ -1,10 +1,10 @@
 ---
-title: Deploying a React Router v7 Blog with Full SSG to Cloudflare Pages
+title: Deploying a React Router v7 blog with full SSG to Cloudflare Pages
 date: 2025-09-01
 description: A personal walkthrough of building a full SSG blog with React Router v7 and deploying it to Cloudflare Pages.
 ---
 
-## Deploying a React Router v7 blog with full SSG to Cloudflare Pages
+# Deploying a React Router v7 blog with full SSG to Cloudflare Pages
 
 [As mentioned in my previous post](./built-my-own-blog), this blog is built with React Router v7, statically generated, and deployed to CloudFlare Pages. I’m used to working with Next.js, and for that framework there are endless guides and examples. But when I searched for stories of people doing full SSG with React Router v7, I found almost nothing. That’s exactly why I thought I’d write down my own experience.
 

@@ -4,7 +4,7 @@ date: 2025-08-30
 description: Just a styleguide page, no need to read.
 ---
 
-## Styleguide
+# Styleguide
 
 Markdown Conversion Test Sample (CommonMark-only)
 
@@ -34,12 +34,6 @@ Emoji as plain Unicode: 😀 🎉 👍
 ## H2 heading
 
 ### H3 heading
-
-#### H4 heading
-
-##### H5 heading
-
-###### H6 heading
 
 ---
 

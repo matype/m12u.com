@@ -4,7 +4,7 @@ date: 2025-08-31
 description: Built my own blog site, it's built with TypeScript and React Router v7, styled with Tailwind, and deployed on Cloudflare Pages.
 ---
 
-## Building my blog with React Router
+# Building my blog with React Router
 
 I finally set up my own blog site.
 

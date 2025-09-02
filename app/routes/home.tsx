@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home"
 
 import { Link } from "react-router"
-import { getAllPostsMeta } from "./posts.server"
+import { getAllPostsMeta } from "../lib/posts.server"
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,47 +17,51 @@ export function loader() {
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
-      <h2 className="mt-16 font-bold">about</h2>
-      <p className="mt-4">hi, it's me!</p>
-      <ul className="mt-8">
-        {links.map((link, i) => (
-          <li key={i}>
-            <a
-              className="text-blue-700 hover:underline underline-offset-2"
-              href={link.url}
-              target="_blank"
-              rel="noopener"
-            >
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <section>
+        <h2 className="font-bold">about</h2>
+        <p className="mt-6">hi, it's me!</p>
+        <ul className="flex gap-4">
+          {links.map((link, i) => (
+            <li key={i}>
+              <a
+                className="text-blue-700 hover:underline underline-offset-2"
+                href={link.url}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      <h2 className="mt-16 font-bold">blog</h2>
-      <ul className="mt-4">
-        {loaderData.posts.slice(0, 5).map((p) => (
-          <li className="mt-4" key={p.slug}>
-            <Link
-              to={`/blog/${p.slug}`}
-              className="text-blue-700 hover:underline underline-offset-2"
-            >
-              {p.title.toLowerCase()}
-            </Link>
-            <p>{p.description}</p>
-            <time className="block text-slate-500">{p.date}</time>
-          </li>
-        ))}
-      </ul>
-      <Link
-        to="/blog"
-        className="inline-block text-blue-700 hover:underline underline-offset-2 mt-8"
-      >
-        read all
-      </Link>
+      <section className="mt-18">
+        <h2 className="font-bold">blog</h2>
+        <ul className="mt-6">
+          {loaderData.posts.slice(0, 5).map((p) => (
+            <li className="mt-6" key={p.slug}>
+              <Link
+                to={`/blog/${p.slug}`}
+                className="text-blue-700 hover:underline underline-offset-2"
+              >
+                {p.title.toLowerCase()}
+              </Link>
+              <p>{p.description?.toLowerCase()}</p>
+              <time className="block text-slate-500">{p.date}</time>
+            </li>
+          ))}
+        </ul>
+        <Link
+          to="/blog"
+          className="inline-block text-blue-700 hover:underline underline-offset-2 mt-6"
+        >
+          view all →
+        </Link>
+      </section>
 
-      <p className="mt-24">
-        this site doesn't store any logs, including any kind of cookies
+      <p className="mt-18">
+        <small className="text-base">
+          this site doesn't store any logs, including any kind of cookies
+        </small>
       </p>
     </>
   )
@@ -65,15 +69,19 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
 const links = [
   {
-    name: "X (Twitter)",
-    url: "https://x.com/mochachocomaru/",
+    name: "bluesky",
+    url: "https://bsky.app/profile/m12u.bsky.social",
   },
   {
-    name: "Instagram",
+    name: "mastodon",
+    url: "https://mastodon.social/@mochachocomaru",
+  },
+  {
+    name: "instagram",
     url: "https://www.instagram.com/mochachocomaru/",
   },
   {
-    name: "Bluesky",
-    url: "https://bsky.app/profile/m12u.bsky.social",
+    name: "twitter",
+    url: "https://x.com/mochachocomaru/",
   },
 ]

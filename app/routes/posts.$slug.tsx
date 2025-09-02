@@ -1,5 +1,5 @@
 import type { Route } from "./+types/posts.$slug"
-import { getPostHtml } from "./posts.server"
+import { getPostHtml } from "../lib/posts.server"
 import { siteConfig } from "react-router.config"
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -20,10 +20,10 @@ export function meta({ data }: Route.MetaArgs) {
 export default function Post({ loaderData }: Route.ComponentProps) {
   const { post } = loaderData
   return (
-    <article>
-      <time className="block mt-16 text-sm">{post.date}</time>
+    <article className="mt-12">
+      <time className="text-slate-500">{post.date}</time>
       <div
-        className="prose mt-2"
+        className="m12u-markdown"
         dangerouslySetInnerHTML={{
           __html: post.html,
         }}

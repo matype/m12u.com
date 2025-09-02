@@ -1,11 +1,12 @@
 import type { Route } from "./+types/posts"
 import { Link } from "react-router"
-import { getAllPostsMeta } from "./posts.server"
+import { getAllPostsMeta } from "../lib/posts.server"
+import { siteConfig } from "react-router.config"
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: `All posts | ${siteConfig.name}` },
+    { name: "description", content: "mochachocomaru's website" },
   ]
 }
 
@@ -16,10 +17,10 @@ export function loader() {
 export default function Posts({ loaderData }: Route.ComponentProps) {
   return (
     <>
-      <h1 className="mt-16 font-bold">All Posts</h1>
-      <ul className="mt-4">
+      <h1 className="font-bold">All Posts</h1>
+      <ul className="mt-6">
         {loaderData.posts.map((p) => (
-          <li className="mt-4" key={p.slug}>
+          <li className="mt-6" key={p.slug}>
             <Link
               to={`/blog/${p.slug}`}
               className="text-blue-700 hover:underline underline-offset-2"
