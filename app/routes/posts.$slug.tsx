@@ -21,7 +21,7 @@ export default function Post({ loaderData }: Route.ComponentProps) {
   const { post } = loaderData
   return (
     <article className="mt-12">
-      <time className="text-slate-500">{post.date}</time>
+      <time className="text-gray-500">{post.date}</time>
       <div
         className="m12u-markdown"
         dangerouslySetInnerHTML={{

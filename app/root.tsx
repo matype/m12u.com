@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router"
+import { siteConfig } from "react-router.config"
 
 import type { Route } from "./+types/root"
 import "./app.css"
@@ -20,12 +21,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen bg-white text-slate-900 text-base">
-        <section className="mx-auto py-18 max-w-2xl px-6">
+      <body className="min-h-screen bg-white text-gray-900 text-base">
+        <section className="mx-auto px-6 pt-18 pb-30 max-w-2xl">
           <header className="mb-18">
             <h1 className="font-bold">
               <Link to="/" className="hover:underline underline-offset-2">
-                m12u - mochachocomaru
+                m12u - {siteConfig.name}
               </Link>
             </h1>
           </header>
@@ -59,11 +60,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="mt-24">
+    <main>
       <h1 className="font-bold">{message}</h1>
       <p>{details}</p>
       {stack && (
-        <pre className="w-full mt-8 p-4 overflow-x-auto text-sm bg-blue-950 rounded-xl text-blue-50">
+        <pre className="w-full mt-6 p-3 overflow-x-auto text-sm bg-gray-800 rounded-xl text-gray-50">
           <code>{stack}</code>
         </pre>
       )}

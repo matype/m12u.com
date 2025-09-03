@@ -47,7 +47,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 {p.title.toLowerCase()}
               </Link>
               <p>{p.description?.toLowerCase()}</p>
-              <time className="block text-slate-500">{p.date}</time>
+              <time className="block text-gray-500">{p.date}</time>
             </li>
           ))}
         </ul>

@@ -27,7 +27,7 @@ export default function Posts({ loaderData }: Route.ComponentProps) {
             >
               {p.title}
             </Link>
-            <time className="block text-slate-500">{p.date}</time>
+            <time className="block text-gray-500">{p.date}</time>
           </li>
         ))}
       </ul>
