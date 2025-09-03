@@ -2,11 +2,12 @@ import type { Route } from "./+types/home"
 
 import { Link } from "react-router"
 import { getAllPostsMeta } from "../lib/posts.server"
+import { siteConfig } from "react-router.config"
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "m12u - mochachocomaru" },
-    { name: "description", content: "mochachocomaru's website" },
+    { title: `m12u - ${siteConfig.name}` },
+    { name: "description", content: siteConfig.description },
   ]
 }
 

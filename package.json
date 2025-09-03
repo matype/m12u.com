@@ -2,6 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "tsx scripts/rss.ts && tsx scripts/sitemap.ts",
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
@@ -17,7 +18,8 @@
     "marked": "^16.2.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.7.1"
+    "react-router": "^7.7.1",
+    "rss": "^1.2.2"
   },
   "devDependencies": {
     "@react-router/dev": "^7.7.1",
@@ -26,7 +28,9 @@
     "@types/node": "^20",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@types/rss": "^0.0.32",
     "tailwindcss": "^4.1.4",
+    "tsx": "^4.20.5",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"

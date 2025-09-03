@@ -3,6 +3,7 @@ import type { Config } from "@react-router/dev/config"
 export const siteConfig = {
   name: "mochachocomaru",
   domain: "m12u.com",
+  description: "mochachocomaru's website",
 }
 
 export default {

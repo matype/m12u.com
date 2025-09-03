@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://m12u.com/sitemap.xml
+Sitemap: https://m12u.com/rss.xml

@@ -6,7 +6,7 @@ import { siteConfig } from "react-router.config"
 export function meta({}: Route.MetaArgs) {
   return [
     { title: `All posts | ${siteConfig.name}` },
-    { name: "description", content: "mochachocomaru's website" },
+    { name: "description", content: siteConfig.description },
   ]
 }
 
